@@ -1,0 +1,66 @@
+
+**** 05/17/22 21:33:29 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-sim1"  [ C:\OrcadProjects\proiect\cad_project-pspicefiles\schematic1\sim1.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "sim1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of D:\OrCad\SPB_data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 1000ns 0 
+.STEP LIN PARAM set 0 1 0.01 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source CAD_PROJECT
+R_R5         0 N03829  10k TC=0,0 
+X_TX1    N03643 0 N03521 N03525 SCHEMATIC1_TX1 
+X_R6         N04053 N03735 N03829 POT PARAMS: SET=set VALUE=30K
+--------------------------------------------------$
+ERROR(ORPSIM-16152): Invalid number: Error while converting token 'set' to double value. Token can be a constant or expression
+---------------------------------------------------------------$
+ERROR(ORPSIM-16368): Encountered an invalid double constant or expression in the input file
+D_D2         0 N03521 D1N4148 
+C_C1         0 N03415  1n  TC=0,0 
+V_V1         N03635 0 DC 0Vdc AC 155.5634918610405ac 
+D_D4         0 N03525 D1N4148 
+X_U3A         N03529 N03735 N03415 0 N03673 TL082
+R_R4         0 N04053  30k TC=0,0 
+R_R1         N03529 N03415  1k TC=0,0 
+R_R2         N03829 N03743  0.3 TC=0,0 
+D_D3         N03525 N03415 D1N4148 
+Q_Q1         N03415 N03673 N03743 Q2N3055
+D_D1         N03521 N03415 D1N4148 
+R_R7         N03635 N03643  1k TC=0,0 
+Q_Q2         N03673 N03743 N03829 Q2N3055
+X_D9         0 N03529 awb1n3830 PARAMS:               
+.PARAM  set=0.5
+
+.subckt SCHEMATIC1_TX1 1 2 3 4  
+K_TX1         L1_TX1 L2_TX1 1
+L1_TX1         1 2 100mH
+L2_TX1         3 4 10mH
+.ends SCHEMATIC1_TX1
+
+**** RESUMING sim1.cir ****
+.END
+

@@ -1,0 +1,26 @@
+  Revised: Wednesday, May 18, 2022
+          Revision: 
+
+
+
+
+
+
+
+Bill Of Materials            May 18,2022      22:43:37	Page1
+
+Item	Quantity	Reference	Part
+______________________________________________
+
+1	1	C1	10m
+2	4	D1,D2,D3,D4	D1N4148
+3	1	D5	1N4737
+4	2	Q1,Q2	Q2N3055
+5	1	R1	1k
+6	1	R2	0.3
+7	1	R4	20k
+8	1	R5	
+9	1	R6	10k
+10	1	R7	1
+11	1	R8	2k
+12	1	U3	TL082

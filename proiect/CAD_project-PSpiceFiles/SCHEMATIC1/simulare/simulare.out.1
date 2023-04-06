@@ -1,0 +1,306 @@
+
+**** 05/18/22 20:45:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-simulare"  [ C:\OrcadProjects\proiect\cad_project-pspicefiles\schematic1\simulare.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "simulare.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of D:\OrCad\SPB_data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 1000ns 0 10n 
+.STEP LIN PARAM set 0 1 0.1 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source CAD_PROJECT
+R_R5         0 OUT R_R5 500 TC=0,0 
+.model        R_R5 RES R=1 DEV=1% TC1=0 TC2=0
+X_TX1    N03643 0 N03521 N03525 SCHEMATIC1_TX1 
+X_R6         N04053 N03735 N08279 POT PARAMS: SET={set} VALUE=10k
+D_D2         0 N03521 D1N4148 
+C_C1         0 N03415  10m  TC=0,0 
+D_D4         0 N03525 D1N4148 
+X_U3A         N03529 N03735 N03415 0 N03673 TL082
+R_R4         0 N04053 R_R4 20k TC=0,0 
+.model        R_R4 RES R=1 DEV=1% TC1=0 TC2=0
+R_R1         N03529 N03415 R_R1 1k TC=0,0 
+.model        R_R1 RES R=1 DEV=1% TC1=0 TC2=0
+R_R2         OUT N03743 R_R2 0.3 TC=0,0 
+.model        R_R2 RES R=1 DEV=1% TC1=0 TC2=0
+D_D3         N03525 N03415 D1N4148 
+Q_Q1         N03415 N03673 N03743 Q2N3055
+D_D1         N03521 N03415 D1N4148 
+R_R7         N03635 N03643 R_R7 1 TC=0,0 
+.model        R_R7 RES R=1 DEV=1% TC1=0 TC2=0
+Q_Q2         N03673 N03743 OUT Q2N3055
+R_R8         N08279 OUT R_R8 2k  
+.model        r_R8 RES R=1 DEV=1%
+V_V1         N03635 0  
++SIN 0 155.563491861 60 0 0 0
+X_D5         0 N03529 awb1n4737 PARAMS:               
+.PARAM  r0=10 set=1
+
+.subckt SCHEMATIC1_TX1 1 2 3 4  
+K_TX1         L1_TX1 L2_TX1 1
+L1_TX1         1 2 100mH
+L2_TX1         3 4 10mH
+.ends SCHEMATIC1_TX1
+
+**** RESUMING simulare.cir ****
+.END
+
+**** 05/18/22 20:45:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-simulare"  [ C:\OrcadProjects\proiect\cad_project-pspicefiles\schematic1\simulare.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4148         X_U3A.dx        X_U3A.dy        
+          IS    2.682000E-09  800.000000E-18  800.000000E-18 
+           N    1.836                                        
+         ISR    1.565000E-09                                 
+         IKF     .04417                                      
+          BV  100                                            
+         IBV  100.000000E-06                                 
+          RS     .5664                          1.000000E-03 
+          TT   11.540000E-09                                 
+         CJO    4.000000E-12                   10.000000E-12 
+          VJ     .5                                          
+           M     .3333                                       
+
+
+**** 05/18/22 20:45:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-simulare"  [ C:\OrcadProjects\proiect\cad_project-pspicefiles\schematic1\simulare.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Q2N3055         
+               NPN             
+       LEVEL    1            
+          IS  974.400000E-15 
+          BF   99.49         
+          NF    1            
+         VAF   50            
+         IKF    4.029        
+         ISE  902.500000E-12 
+          NE    1.941        
+          BR    2.949        
+          NR    1            
+         ISS    0            
+          RB     .1          
+          RE    0            
+          RC     .1          
+         CJE  569.100000E-12 
+         VJE     .75         
+         MJE     .3333       
+         CJC  276.000000E-12 
+         VJC     .75         
+         MJC     .3333       
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          TF   39.110000E-09 
+         XTF    2            
+         VTF   10            
+         ITF   20            
+          TR  971.700000E-09 
+         XTB    1.5          
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+**** 05/18/22 20:45:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-simulare"  [ C:\OrcadProjects\proiect\cad_project-pspicefiles\schematic1\simulare.sim ] 
+
+
+ ****     Junction FET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U3A.jx1       X_U3A.jx2       
+               NJF             NJF             
+         VTO   -1              -1            
+        BETA  222.070000E-06  222.070000E-06 
+          IS  100.000000E-12  100.000000E-12 
+
+
+**** 05/18/22 20:45:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-simulare"  [ C:\OrcadProjects\proiect\cad_project-pspicefiles\schematic1\simulare.sim ] 
+
+
+ ****     Resistor MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               R_R5            R_R4            R_R1            R_R2            
+           R    1               1               1               1            
+
+
+               R_R7            R_R8            
+           R    1               1            
+
+
+**** 05/18/22 20:45:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-simulare"  [ C:\OrcadProjects\proiect\cad_project-pspicefiles\schematic1\simulare.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM SET =    0     
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  OUT)    7.9550  (N03415)   10.0780 (N03521)    5.0391 (N03525)    5.0391     
+
+(N03529)    7.4603 (N03635)    0.0000 (N03643)    0.0000 (N03673)    8.5674     
+
+(N03735)    7.4578 (N03743)    7.9599 (N04053)    4.9719 (N08279)    7.4578     
+
+(X_U3A.6)    -.0623                   (X_U3A.7)    9.8950                       
+
+(X_U3A.8)    9.8950                   (X_U3A.9)    0.0000                       
+
+(X_U3A.10)    7.8546                  (X_U3A.11)    9.6495                      
+
+(X_U3A.12)    9.6461                  (X_U3A.53)    7.7624                      
+
+(X_U3A.54)    2.3158                  (X_U3A.90)   26.5540                      
+
+(X_U3A.91)   40.0000                  (X_U3A.92)  -40.0000                      
+
+(X_U3A.99)    5.0391                  (X_D5.xinst1n4737.1)     .4652            
+
+(X_D5.xinst1n4737.3)    6.9951        (X_D5.xinst1n4737.9) 9.224E-06        
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+    X_U3A.vb    -6.234E-07
+    X_U3A.vc    -2.624E-02
+    X_U3A.ve     5.935E-12
+    X_U3A.vlim   2.655E-02
+    X_U3A.vlp   -1.345E-11
+    X_U3A.vln   -6.655E-11
+
+    TOTAL POWER DISSIPATION   6.08E-02  WATTS
+
+
+ERROR(ORPSIM-15138): Convergence problem in Transient Analysis at Time =  123.1E-12.
+         Time step =  186.3E-21, minimum allowable step size =  1.000E-18
+
+  These voltages failed to converge:
+
+    V(X_U3A.6)                =     2.020V  \   -54.72mV
+    V(X_U3A.7)                =     11.98V  \      9.90V
+    V(X_U3A.53)               =     7.747V  \     7.763V
+    V(X_U3A.90)               =     68.36V  \     26.71V
+    V(X_U3A.8)                =     11.98V  \      9.90V
+
+  These supply currents failed to converge:
+
+    I(X_U3A.egnd)             =   -68.38mA  \   -26.70mA
+    I(X_TX1.L1_TX1)           =    11.77nA  \    10.48nA
+    I(X_TX1.L2_TX1)           =   -37.22nA  \   -33.16nA
+    I(V_V1)                   =   -11.77nA  \   -10.48nA
+    I(X_U3A.vb)               =   -2.747uA  \  -622.23nA
+    I(X_U3A.vc)               =    -7.999A  \   178.60uA
+    I(X_U3A.ve)               =    -7.883A  \    26.36mA
+    I(X_U3A.vlim)             =    68.36mA  \    26.71mA
+    I(X_U3A.vlp)              =    58.37pA  \   -13.38pA
+    I(X_U3A.vln)              =  -174.78pA  \   -66.43pA
+    I(X_U3A.hlim)             =  -136.73pA  \   -53.41pA
+
+  These devices failed to converge:
+    D_D2      D_D4      D_D3      D_D1      X_U3A.dlp X_D5.xinst1n4737.DF1 
+    X_U3A.fb  
+
+ERROR(ORPSIM-15659): Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  OUT)    7.9489  (N03415)   10.0780 (N03521)    5.0391 (N03525)    5.0391     
+
+(N03529)    7.4603 (N03635) 7.219E-06 (N03643) 7.208E-06 (N03673)    8.5595     
+
+(N03735)    7.4521 (N03743)    7.9551 (N04053)    4.9681 (N08279)    7.4521     
+
+(X_U3A.6)    2.0203                   (X_U3A.7)   11.9780                       
+
+(X_U3A.8)   11.9780                   (X_U3A.9)    0.0000                       
+
+(X_U3A.10)    7.8518                  (X_U3A.11)    9.6496                      
+
+(X_U3A.12)    9.6461                  (X_U3A.53)    7.7466                      
+
+(X_U3A.54)    2.3158                  (X_U3A.90)   68.3640                      
+
+(X_U3A.91)   40.0000                  (X_U3A.92)  -40.0000                      
+
+(X_U3A.99)    5.0391                  (X_D5.xinst1n4737.1)     .4652            
+
+(X_D5.xinst1n4737.3)    6.9951        (X_D5.xinst1n4737.9) 9.224E-06        
+
+
+**** Interrupt ****
